@@ -177,3 +177,6 @@ const cors = require("cors"); -------------<<<<<<<
 
 app.use(express.json());
 app.use(cors()); -------------<<<<<<<
+
+38. open client folder 
+39. create react project in it
