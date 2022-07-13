@@ -183,3 +183,27 @@ app.use(cors()); -------------<<<<<<<
   npx create-react-app .
 40. istall axios to react
   npm install axios
+41. create Design/Design.js to store the design
+42. link Design.js to App.js
+43. in Design.js  - test with mock data
+
+import React from "react";
+
+export default function Design() {
+  const [list, setList] = React.useState([
+    { id: 1, name: "dsp", age: 12, username: "pspp" },
+  ]);
+  return (
+    <div>
+      {list.map((user) => {
+        return <div>
+            <h1>Name :{user.name}</h1>
+            <h1>Age :{user.age}</h1>
+            <h1>UserName :{user.username}</h1>
+        </div>;
+      })}
+    </div>
+  );
+}
+
+44.
