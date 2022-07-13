@@ -116,4 +116,56 @@ app.listen(3001, () => {
 
 33. open POSTMAN and check  GET >> http://localhost:3001/getUsers
 
+34. create post-> /createUser
 
+const express = require("express");
+const { default: mongoose } = require("mongoose");
+const UserModel = require("./models/Users");
+const app = express();
+
+mongoose.connect(
+  "mongodb+srv://darshana:darshana@cluster0.b4ir7g9.mongodb.net/merntutorial?retryWrites=true&w=majority"
+);
+
+app.get("/getUsers", (req, res) => {
+  UserModel.find({}, (err, result) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+
+//----------------------------------------------------------
+app.post("/createUser", async (req, res) => {
+  const user = req.body;
+  const newUser = new UserModel(user);
+  await newUser.save();
+
+  res.json(user);
+});
+//----------------------------------------------------------
+
+
+app.listen(3001, () => {
+  console.log("Server runs in 3001");
+});
+
+
+35.open POSTMAN and check  POST >> http://localhost:3001/createUser
+go to Body - Json tab in POSTMAN
+type bellow
+
+{
+    "name":"ab",
+    "age":20,
+    "username":"as"
+}
+
+36. modify 'index.js' {to get jsons from body}
+
+const app = express();
+
+app.use(express.json()); --------------<<<------
