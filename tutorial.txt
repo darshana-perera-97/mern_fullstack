@@ -153,6 +153,12 @@ app.listen(3001, () => {
   console.log("Server runs in 3001");
 });
 
+36. modify 'index.js' {to get jsons from body}
+
+const app = express();
+
+app.use(express.json()); --------------<<<------
+
 
 35.open POSTMAN and check  POST >> http://localhost:3001/createUser
 go to Body - Json tab in POSTMAN
@@ -164,8 +170,10 @@ type bellow
     "username":"as"
 }
 
-36. modify 'index.js' {to get jsons from body}
+37. import cors to index.js
 
 const app = express();
+const cors = require("cors"); -------------<<<<<<<
 
-app.use(express.json()); --------------<<<------
+app.use(express.json());
+app.use(cors()); -------------<<<<<<<

@@ -2,8 +2,10 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 const UserModel = require("./models/Users");
 const app = express();
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors())
 
 mongoose.connect(
   "mongodb+srv://darshana:darshana@cluster0.b4ir7g9.mongodb.net/merntutorial?retryWrites=true&w=majority"
