@@ -8,4 +8,6 @@
     cd server
 06. s: make node project inside server folder
     open terminal in server folder and type 'npm init -y'
-07.
+07. s: install ...
+npm install express mongoose nodemon cors
+08.s create 'index.js' inide server folder
