@@ -27,3 +27,47 @@ app.listen(3001, () => {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"----------------------------<<<<<<<<----------------
   },
+
+11.s open terminal in server folder and run app
+    npm start
+
+12. open "Databse Deployment" in MongoDB
+13. click on "Conncect" btn
+14. select "Conncect to mongodb console"
+15. copy the link as follow
+mongodb+srv://darshana:<password>@cluster0.b4ir7g9.mongodb.net/test
+replace the password [darshana]
+16. open MONGODB CONSLOE application
+17. paste the link in the application
+18. click on "Connect" button
+19. go to mongodb application and press "connect" button
+20. select "Connect your application" option
+21. copy the link in it
+22. open 'index.js' and write bellow codes
+
+
+const express = require("express");
+const { default: mongoose } = require("mongoose");
+const app = express();----------------------<<<<<<<<<------------------
+
+mongoose.connect("mongodb+srv://darshana:<password>@cluster0.b4ir7g9.mongodb.net/?retryWrites=true&w=majority");----------------------<<<<<<<<<------------------
+
+app.listen(3001, () => {
+  console.log("Server runs in 3001");
+});
+
+
+23. replace with the password
+24. open MONGODB COMPUS
+25. click on "Create Database" button [as merntutorials]
+26. modify the index.jsas follow
+
+old code:::
+mongoose.connect("mongodb+srv://darshana:<password>@cluster0.b4ir7g9.mongodb.net/?retryWrites=true&w=majority");----------------------<<<<<<<<<------------------
+new code:::
+mongoose.connect("mongodb+srv://darshana:<password>@cluster0.b4ir7g9.mongodb.net/merntutorial?retryWrites=true&w=majority");----------------------<<<<<<<<<------------------
+
+"....mongodb.net/?..."  >>>> "....mongodb.net/pasteDatabaseName?..."
+
+
+
