@@ -4,11 +4,23 @@ import Axios from "axios";
 
 export default function Design() {
   const [list, setList] = React.useState([]);
+  const [name, setName] = React.useState("");
+  const [age, setAge] = React.useState(0);
+  const [username, setUsername] = React.useState("");
   React.useEffect(() => {
     Axios.get("http://localhost:3001/getUsers").then((responce) => {
       setList(responce.data);
     });
   }, []);
+  const createUser = () => {
+    Axios.post("http://localhost:3001/createUser", {
+      name: name,
+      age: age,
+      username: username,
+    }).then((responce) => {
+      alert("user Created");
+    });
+  };
   return (
     <div>
       {list.map((user) => {
@@ -21,10 +33,22 @@ export default function Design() {
         );
       })}
       <div>
-        <input type="text" placeholder="name"/>
-        <input type="text" placeholder="age"/>
-        <input type="text" placeholder="username"/>
-        <button>Create user</button>
+        <input
+          type="text"
+          placeholder="name"
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="age"
+          onChange={(e) => setAge(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <button onClick={createUser}>Create user</button>
       </div>
     </div>
   );
