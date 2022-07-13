@@ -180,3 +180,6 @@ app.use(cors()); -------------<<<<<<<
 
 38. open client folder 
 39. create react project in it
+  npx create-react-app .
+40. istall axios to react
+  npm install axios
