@@ -1,0 +1,11 @@
+01. go to 'MongoDB atlas" site
+02. create a new cluster
+03. go up to 'Databse Deployment' page
+04. open project folder and create 2 folders
+    client
+    server
+05. change terminal to server folder
+    cd server
+06. s: make node project inside server folder
+    open terminal in server folder and type 'npm init -y'
+07.
